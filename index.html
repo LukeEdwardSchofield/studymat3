@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyMate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    />
+  </head>
+  <body>
+    <section class="first-state">
+      <section id="design-heading">
+        <div id="heading-container">
+          <div id="heading"></div>
+        </div>
+      </section>
+
+      <section id="menu-buttons">
+        <img
+          src="418914222_413140051142531_591209322584344884_n.png"
+          alt="StudyMate"
+          id="logo-heading"
+        />
+
+        <button id="taskMenu-btn" onclick="changeState('taskMenu')">
+          Tasks
+        </button>
+        <button id="projectMenu-btn" onclick="changeState('projectMenu')">
+          Projects
+        </button>
+        <button id="reminderMenu-btn" onclick="changeState('reminderMenu')">
+          Personal Reminders
+        </button>
+      </section>
+
+      <section id="design-footer">
+        <img
+          src="paperDesigns-removebg-preview.png"
+          alt="Design"
+          id="paper-design"
+        />
+
+        <img
+          id="three-dots"
+          src="three-dots-removebg-preview.png"
+          alt="three dots"
+        />
+      </section>
+    </section>
+
+    <section class="second-state">
+      <heading class="logo-header">
+        <img
+          src="418914222_413140051142531_591209322584344884_n.png"
+          alt="studyMate-logo"
+          id="second-state-headingLogo"
+        />
+      </heading>
+
+      <section class="nav-bar">
+        <button
+          class="menu-button"
+          id="state2-task-menu"
+          onclick="changeMenu('taskMenu')"
+        >
+          Tasks
+        </button>
+        <button
+          class="menu-button"
+          id="state2-project-menu"
+          onclick="changeMenu('projectMenu')"
+        >
+          Projects
+        </button>
+        <button
+          class="menu-button"
+          id="state2-reminder-menu"
+          onclick="changeMenu('reminderMenu')"
+        >
+          Personal Reminders
+        </button>
+      </section>
+
+      <!--Task Menu-->
+      <section class="second-state-menu" id="main-menu-task">
+        <div class="task-form-container">
+          <form action="" class="task-form">
+            <input type="text" id="task-input" />
+            <input type="date" id="task-input-deadline" />
+          </form>
+        </div>
+
+        <button class="task-submit" onclick="taskInput()">Add Task</button>
+
+        <div class="task-list">
+          <div class="tasks">
+            <!---Dynamically added tasks-->
+          </div>
+        </div>
+      </section>
+      <!--Task Menu-->
+
+      <!---Project Menu-->
+      <section class="second-state-menu" id="main-menu-project">
+        <div class="project-form-container">
+          <form action="" class="project-form">
+            <input type="text" id="project-input" />
+            <input type="date" id="project-input-deadline" />
+          </form>
+        </div>
+
+        <button class="project-submit" onclick="projectInput()">
+          Add Project
+        </button>
+
+        <div class="project-list">
+          <div class="projects">
+            <!---Dynamically added projects-->
+          </div>
+        </div>
+      </section>
+      <!---Project Menu-->
+
+      <!--Reminders Menu-->
+      <section class="second-state-menu" id="main-menu-reminder">
+        <div class="reminder-form-container">
+          <form action="" class="reminder-form">
+            <input type="text" id="reminder-input" />
+            <input type="date" id="reminder-input-deadline" />
+          </form>
+        </div>
+
+        <button class="reminder-submit" onclick="reminderInput()">
+          Add Reminder
+        </button>
+
+        <div class="reminder-list">
+          <div class="reminder">
+            <!---Dynamically added reminders-->
+          </div>
+        </div>
+      </section>
+      <!--Reminders Menu-->
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
