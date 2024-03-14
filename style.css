@@ -582,6 +582,21 @@
     padding: 15px;
   }
 
+  .task-form-container{
+    border: 4px solid rgb(83, 120, 252);
+    background-color: #6a90ff;
+  }
+
+  .project-form-container{
+    border: 4px solid #008346;
+    background-color: #44b680;
+  }
+
+  .reminder-form-container{
+    border: 4px solid #df2d00;
+    background-color: #e9927c;
+  }
+
   .task-form,
   .project-form,
   .reminder-form {
