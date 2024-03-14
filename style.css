@@ -16,7 +16,7 @@
   #heading {
     width: 100vw;
     height: 10vh;
-    background: gray;
+    background-color: rgb(225, 165, 86);
   }
 
   #circle-design-top {
@@ -64,6 +64,7 @@
     font-family: "Josefin Slab";
     font-size: 7vw;
     font-weight: 900;
+    transition: 0.5s ease;
   }
 
   #taskMenu-btn {
@@ -76,9 +77,21 @@
   }
 
   #reminderMenu-btn {
-    background-color: #ffb29e;
+    background-color: #ff896b;
     font-size: 5vw;
   }
+
+  #taskMenu-btn:hover,
+  #projectMenu-btn:hover,
+  #reminderMenu-btn:hover {
+    width: 70vw;
+    height: 9vh;
+    transition: 0.5s ease;
+    border-radius: 8px;
+    letter-spacing: 5px;
+    cursor: pointer;
+  }
+
 
   #design-footer {
     display: flex;
@@ -142,6 +155,7 @@
     border-radius: 10px;
     font-size: 3vw;
     font-weight: 900;
+    transition: 0.2s ease;
   }
 
   #state2-task-menu {
@@ -157,9 +171,24 @@
     font-size: 2.5vw;
   }
 
+  #state2-task-menu:hover, 
+  #state2-project-menu:hover, 
+  #state2-reminder-menu:hover{
+    height: 5.5vh;
+    width: 27vw;
+    transition: 0.5s ease;
+    letter-spacing: 3px;
+    font-weight: 900;
+    font-size: 3.2vw;
+    cursor: pointer;
+  }
+
   /* task menu */
  
   .second-state-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     height: 100vh;
   }
@@ -174,11 +203,24 @@
     width: 80%;
     height: 12vh;
     border-radius: 10px;
-    border: 4px solid rgb(171, 189, 255);
-    background-color: rgb(163, 205, 243);
     margin-top: 5vh;
     margin-bottom: 10px;
     margin-left: 9.5vw;
+  }
+
+  .task-form-container{
+    border: 4px solid rgb(83, 120, 252);
+    background-color: #6a90ff;
+  }
+
+  .project-form-container{
+    border: 4px solid #008346;
+    background-color: #44b680;
+  }
+
+  .reminder-form-container{
+    border: 4px solid #df2d00;
+    background-color: #e9927c;
   }
 
   .task-form,
@@ -238,6 +280,12 @@
     margin-left: 14vw;
     background-color: #d6ddf2;
     font-weight: 700;
+    cursor: pointer;
+  }
+
+  .task-submit:hover, .project-submit:hover,
+  .reminder-submit:hover{
+    
   }
 
   .completed p {
@@ -279,12 +327,20 @@
   .task-deadline, .project-deadline, .reminder-deadline{
     margin-bottom: 20px;
     padding: 10px;
+    
   }
 
   .task-control-buttons button, .project-control-buttons button, .reminder-control-buttons button{
     border: none;
     border-radius: 10px;
     padding: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .task-control-buttons button:hover, .project-control-buttons button:hover, .reminder-control-buttons button:hover{
+    padding: 7px;
+    transition: 0.3s ease;
   }
 
   .complete-button{
@@ -308,7 +364,7 @@
   #heading {
     width: 100vw;
     height: 10vh;
-    background: gray;
+    background-color: rgb(225, 165, 86);
   }
 
   #circle-design-top {
@@ -372,6 +428,7 @@
     font-family: "Josefin Slab";
     font-size: 3vw;
     font-weight: 900;
+    transition: 0.5s ease;
   }
 
   #taskMenu-btn {
@@ -387,6 +444,15 @@
     background-color: #ffb29e;
   }
 
+ #taskMenu-btn:hover, 
+ #projectMenu-btn:hover,
+ #reminderMenu-btn:hover{
+    border-radius: 20px;
+    letter-spacing: 3px;
+    transition: 0.5s ease;
+    cursor: pointer;
+ }
+  
   #design-footer {
     display: flex;
   }
@@ -468,18 +534,30 @@
     margin-top: 15vh;
     height: 8vh;
     background-color: #a8bbf4;
+    transition: 0.5s ease;
+    cursor: pointer;
   }
 
   #state2-project-menu {
     margin-top: 4vh;
     height: 8vh;
     background-color: #44b680;
+    transition: 0.5s ease;
+    cursor: pointer;
   }
 
   #state2-reminder-menu {
     margin-top: 4vh;
     height: 8vh;
     background-color: #e9927c;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+
+  #state2-task-menu:hover, #state2-project-menu:hover, #state2-reminder-menu:hover{
+    width: 18vw;
+    height: 10vh;
+    transition: 0.5s ease;
   }
 
   /* task menu */
@@ -603,6 +681,11 @@
     border: none;
     border-radius: 10px;
     padding: 5px;
+  }
+
+  .task-control-buttons button:hover, .project-control-buttons button:hover, .reminder-control-buttons button:hover{
+    padding: 7px;
+    transition: 0.3s ease;
   }
 
   .complete-button{
