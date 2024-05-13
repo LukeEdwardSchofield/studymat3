@@ -11,7 +11,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
     />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
+
   <body>
     <section class="first-state">
       <section id="design-heading">
@@ -22,7 +24,7 @@
 
       <section id="menu-buttons">
         <img
-          src="418914222_413140051142531_591209322584344884_n.png"
+          src="./assets/studyMate-logo.png"
           alt="StudyMate"
           id="logo-heading"
         />
@@ -40,14 +42,14 @@
 
       <section id="design-footer">
         <img
-          src="paperDesigns-removebg-preview.png"
+          src="./assets/paperDesigns-removebg-preview.png"
           alt="Design"
           id="paper-design"
         />
 
         <img
           id="three-dots"
-          src="three-dots-removebg-preview.png"
+          src="./assets/three-dots-removebg-preview.png"
           alt="three dots"
         />
       </section>
@@ -56,7 +58,7 @@
     <section class="second-state">
       <heading class="logo-header">
         <img
-          src="418914222_413140051142531_591209322584344884_n.png"
+          src="./assets/studyMate-logo.png"
           alt="studyMate-logo"
           id="second-state-headingLogo"
         />
@@ -84,13 +86,21 @@
         >
           Personal Reminders
         </button>
-      </section>
+      </section> 
 
       <!--Task Menu-->
       <section class="second-state-menu" id="main-menu-task">
+        <input
+          type="text"
+          id="task-search"
+          class="search"
+          placeholder="Search a Task..."
+        />
+        <button onclick="searchTask()" class="search-btn"><i class="fas fa-search"></i></button>
+
         <div class="task-form-container">
           <form action="" class="task-form">
-            <input type="text" id="task-input" />
+            <input type="text" id="task-input" placeholder="Enter a task... " />
             <input type="date" id="task-input-deadline" />
           </form>
         </div>
@@ -105,11 +115,19 @@
       </section>
       <!--Task Menu-->
 
+
       <!---Project Menu-->
       <section class="second-state-menu" id="main-menu-project">
+        <input type="text" id="project-search" class="search" placeholder="Search a Project..."/>
+        <button onclick="searchProject()" class="search-btn"><i class="fas fa-search"></i></button>
+
         <div class="project-form-container">
           <form action="" class="project-form">
-            <input type="text" id="project-input" />
+            <input
+              type="text"
+              id="project-input"
+              placeholder="Enter a project..."
+            />
             <input type="date" id="project-input-deadline" />
           </form>
         </div>
@@ -126,11 +144,19 @@
       </section>
       <!---Project Menu-->
 
+
       <!--Reminders Menu-->
       <section class="second-state-menu" id="main-menu-reminder">
+        <input type="text" id="reminder-search" class="search" placeholder="Search a Reminder..."/>
+        <button onclick="searchReminder()" class="search-btn"><i class="fas fa-search"></i></button>
+
         <div class="reminder-form-container">
           <form action="" class="reminder-form">
-            <input type="text" id="reminder-input" />
+            <input
+              type="text"
+              id="reminder-input"
+              placeholder="Enter a reminder..."
+            />
             <input type="date" id="reminder-input-deadline" />
           </form>
         </div>
@@ -146,8 +172,77 @@
         </div>
       </section>
       <!--Reminders Menu-->
+
+
     </section>
 
     <script src="script.js"></script>
+
+    <script>
+
+      function searchTask() {
+        let searchTask = document.getElementById("task-search").value.toLowerCase();
+
+        let taskElement = document.querySelectorAll(".task-text");
+
+        for(i = 0; i < taskElement.length; i++)
+        {
+          let task = taskElement[i].textContent.toLowerCase();
+          let taskParent = taskElement[i].parentNode;
+
+          if(task.indexOf(searchTask) > -1)
+                {
+                    taskParent.style.display = "";
+                } 
+                else{
+                    taskParent.style.display = "none";
+                    
+                }
+            }
+      }
+
+      function searchProject() {
+        let searchProject = document.getElementById("project-search").value.toLowerCase();
+
+        let projectElement = document.querySelectorAll(".project-text");
+
+        for(i = 0; i < projectElement.length; i++)
+        {
+          let project = projectElement[i].textContent.toLowerCase();
+          let projectParent = projectElement[i].parentNode;
+
+          if(project.indexOf(searchProject) > -1)
+                {
+                    projectParent.style.display = "";
+                } 
+                else{
+                    projectParent.style.display = "none";
+                    
+                }
+            }
+      }
+
+      function searchReminder() {
+        let searchReminder = document.getElementById("reminder-search").value.toLowerCase();
+
+        let reminderElement = document.querySelectorAll(".reminder-text");
+
+        for(i = 0; i < reminderElement.length; i++)
+        {
+          let reminder = reminderElement[i].textContent.toLowerCase();
+          let reminderParent = reminderElement[i].parentNode;
+
+          if(reminder.indexOf(searchReminder) > -1)
+                {
+                    reminderParent.style.display = "";
+                } 
+                else{
+                    reminderParent.style.display = "none";
+                    
+                }
+            }
+      }
+
+    </script>
   </body>
 </html>
