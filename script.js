@@ -88,13 +88,15 @@ function displayTasks() {
     // Add a class based on completion status
     taskElement.classList.toggle("completed", task.taskCompleted);
 
-    taskElement.innerHTML = `<p class="task-text" > ${task.task}</p>
-                             <p class="task-deadline">Deadline: ${task.taskDeadline}</p>
-                             <div class="task-control-buttons">
-                                <button class="complete-button" onclick="completeTask(${taskIndex})">Complete</button>
-                                <button class="edit-button" onclick="editTask(${taskIndex})">Edit</button>
-                                <button class="delete-button" onclick="deleteTask(${taskIndex})">Delete</button>
-                             </div>
+    taskElement.innerHTML = `
+                                <p class="task-text" > ${task.task}</p>
+                                <p class="task-deadline">Deadline: ${task.taskDeadline}</p>
+                                <div class="task-control-buttons">
+                                    <button class="complete-button" onclick="completeTask(${taskIndex})">Complete</button>
+                                    <button class="edit-button" onclick="editTask(${taskIndex})">Edit</button>
+                                    <button class="delete-button" onclick="deleteTask(${taskIndex})">Delete</button>
+                                </div>
+                             
                              `;
     tasksContainer.appendChild(taskElement);
   });
@@ -146,6 +148,10 @@ function deleteTask(taskIndex) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   displayTasks();
+}
+
+function searchTask() {
+  let searchTask = document.getELement
 }
 /*Tasks script*/
 
@@ -241,6 +247,10 @@ function deleteProject(projectIndex) {
   localStorage.setItem("projects", JSON.stringify(projects));
 
   displayProjects();
+}
+
+function searchProject() {
+  
 }
 /*projects script*/
 
@@ -338,8 +348,14 @@ function deleteReminder(reminderIndex) {
 
   displayReminders();
 }
+
+function searchReminder() {
+  
+}
 /*reminders script*/
 
 displayTasks();
 displayProjects();
 displayReminders();
+
+
