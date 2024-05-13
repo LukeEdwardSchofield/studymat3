@@ -35,8 +35,8 @@
   }
 
   #three-dots-top {
-   width: 10px;
-   height: 10px;
+    width: 10px;
+    height: 10px;
   }
 
   #logo-heading {
@@ -44,6 +44,19 @@
     height: 15vh;
     margin-top: 30px;
     object-fit: contain;
+    transform: translateY(-200%);
+    animation: slideLogo 1.5s ease forwards;
+  }
+
+  @keyframes slideLogo {
+    0% {
+      top: -1000px;
+    }
+
+    100% {
+      left: 50%;
+      transform: translateX(0%);
+    }
   }
 
   #menu-buttons {
@@ -70,6 +83,18 @@
   #taskMenu-btn {
     background-color: #a8bbf4;
     margin-top: 3%;
+    transform: translateX(-2000%);
+    animation: slideTaskReminder 1.5s ease forwards;
+  }
+
+  @keyframes slideTaskReminder {
+    0%{
+      right: -100px;
+    }
+
+    100%{
+      transform: translateX(0%);
+    }
   }
 
   #projectMenu-btn {
@@ -79,6 +104,8 @@
   #reminderMenu-btn {
     background-color: #ff896b;
     font-size: 5vw;
+    transform: translateX(2000%);
+    animation: slideTaskReminder 1.5s ease forwards;
   }
 
   #taskMenu-btn:hover,
@@ -91,7 +118,6 @@
     letter-spacing: 5px;
     cursor: pointer;
   }
-
 
   #design-footer {
     display: flex;
@@ -171,9 +197,9 @@
     font-size: 2.5vw;
   }
 
-  #state2-task-menu:hover, 
-  #state2-project-menu:hover, 
-  #state2-reminder-menu:hover{
+  #state2-task-menu:hover,
+  #state2-project-menu:hover,
+  #state2-reminder-menu:hover {
     height: 5.5vh;
     width: 27vw;
     transition: 0.5s ease;
@@ -184,11 +210,33 @@
   }
 
   /* task menu */
- 
-  .second-state-menu{
+
+  .search{
+    height: 3vh;
+    width: 70vw;
+    background-color: rgb(255, 255, 255);
+    margin-left: 10vw;
+    margin-bottom: 3vh;
+    border: 3px solid #e9927c;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .search-btn{
+    height: 3.5vh;
+    width: 5.5vw;
+    margin-bottom: 2vh;
+    border: 2px solid gray;
+    background-color: rgb(255, 255, 255);
+   border-radius: 1000px;
+   cursor: pointer;
+  }
+
+  .second-state-menu {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5vh;
     width: 100vw;
     height: 100vh;
   }
@@ -203,22 +251,21 @@
     width: 80%;
     height: 12vh;
     border-radius: 10px;
-    margin-top: 5vh;
     margin-bottom: 10px;
     margin-left: 9.5vw;
   }
 
-  .task-form-container{
+  .task-form-container {
     border: 4px solid rgb(83, 120, 252);
     background-color: #6a90ff;
   }
 
-  .project-form-container{
+  .project-form-container {
     border: 4px solid #008346;
     background-color: #44b680;
   }
 
-  .reminder-form-container{
+  .reminder-form-container {
     border: 4px solid #df2d00;
     background-color: #e9927c;
   }
@@ -271,7 +318,8 @@
     margin-left: 18px;
   }
 
-  .task-submit, .project-submit,
+  .task-submit,
+  .project-submit,
   .reminder-submit {
     border: none;
     border-radius: 5px;
@@ -283,25 +331,30 @@
     cursor: pointer;
   }
 
-  .task-submit:hover, .project-submit:hover,
-  .reminder-submit:hover{
-    
+  .task-submit:hover,
+  .project-submit:hover,
+  .reminder-submit:hover {
   }
 
   .completed p {
     text-decoration: line-through;
   }
 
-  .tasks, .projects, .reminders{
+  .tasks,
+  .projects,
+  .reminders {
     width: 80%;
   }
-  .task-list, .project-list, .reminder-list{
+  .task-list,
+  .project-list,
+  .reminder-list {
     margin-top: 5vh;
     margin-left: 15.3vw;
-  
   }
 
-  .task, .project, .reminder{
+  .task,
+  .project,
+  .reminder {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -314,8 +367,9 @@
     border: 4px solid rgb(174, 107, 255);
   }
 
-  .task-text, .project-text, .reminder-text{
-    
+  .task-text,
+  .project-text,
+  .reminder-text {
     width: 63vw;
     height: auto;
     padding: 5px;
@@ -324,13 +378,16 @@
     margin-bottom: 10px;
   }
 
-  .task-deadline, .project-deadline, .reminder-deadline{
+  .task-deadline,
+  .project-deadline,
+  .reminder-deadline {
     margin-bottom: 20px;
     padding: 10px;
-    
   }
 
-  .task-control-buttons button, .project-control-buttons button, .reminder-control-buttons button{
+  .task-control-buttons button,
+  .project-control-buttons button,
+  .reminder-control-buttons button {
     border: none;
     border-radius: 10px;
     padding: 5px;
@@ -338,18 +395,18 @@
     transition: 0.3s ease;
   }
 
-  .task-control-buttons button:hover, .project-control-buttons button:hover, .reminder-control-buttons button:hover{
+  .task-control-buttons button:hover,
+  .project-control-buttons button:hover,
+  .reminder-control-buttons button:hover {
     padding: 7px;
     transition: 0.3s ease;
   }
 
-  .complete-button{
-   left: 0;
-   margin-right: 55vw;
-   margin-bottom: 1vh;
+  .complete-button {
+    left: 0;
+    margin-right: 55vw;
+    margin-bottom: 1vh;
   }
-
-
 }
 
 @media screen and (min-width: 601px) {
@@ -392,7 +449,7 @@
     font-size: 10vw;
   }
 
-  .menu-button{
+  .menu-button {
     font-size: 8vw;
   }
 
@@ -401,10 +458,40 @@
     height: 15vh;
     margin-top: 30px;
     object-fit: contain;
+    transform: translateY(-200%);
+    animation: slideLogo 2.5s ease forwards;
+  }
+
+  @keyframes slideLogo {
+    0% {
+      top: -100px;
+    }
+
+    60% {
+      transform: translateY(105%);
+      padding: 100px;
+    }
+
+    100% {
+      left: 50%;
+      transform: translateX(0%);
+    }
   }
 
   #reminderMenu-btn {
     margin-bottom: 0;
+    transform: translateY(2000%);
+    animation: slideReminder 1.5s ease forwards;
+  }
+
+  @keyframes slideReminder {
+    0% {
+      bottom: -100px;
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
   }
 
   #logo-heading {
@@ -412,10 +499,35 @@
   }
   #taskMenu-btn {
     grid-area: taskMenu-btn;
+    transform: translateX(-2000%);
+    animation: slideTask 1.5s ease forwards;
+  }
+
+  @keyframes slideTask {
+    0% {
+      left: -100px;
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
   #projectMenu-btn {
     grid-area: projectMenu-btn;
+    transform: translateX(2000%);
+    animation: slideProject 1.5s ease forwards;
   }
+
+  @keyframes slideProject {
+    0% {
+      right: -100px;
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   #reminderMenu-btn {
     grid-area: reminderMenu-btn;
   }
@@ -444,15 +556,21 @@
     background-color: #ffb29e;
   }
 
- #taskMenu-btn:hover, 
- #projectMenu-btn:hover,
- #reminderMenu-btn:hover{
+  #taskMenu-btn:hover,
+  #projectMenu-btn:hover {
     border-radius: 20px;
     letter-spacing: 3px;
     transition: 0.5s ease;
     cursor: pointer;
- }
-  
+  }
+
+  #reminderMenu-btn:hover {
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+
   #design-footer {
     display: flex;
   }
@@ -467,6 +585,22 @@
     object-fit: contain;
     bottom: 0;
     left: 0;
+    transform: translateX(-2000%);
+    animation: slidePaper 0.5s ease forwards;
+  }
+
+  @keyframes slidePaper {
+    0% {
+      left: -100px;
+    }
+
+    60% {
+      transform: translateX(15%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
 
   .class-topcircle-design-1 {
@@ -487,6 +621,22 @@
     bottom: 0;
     right: 0;
     margin: 3vh;
+    transform: translateX(1000%);
+    animation: slideDot 0.5s ease forwards;
+  }
+
+  @keyframes slideDot {
+    0% {
+      right: -100px;
+    }
+
+    60% {
+      transform: translateX(-15%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
   }
 
   /*
@@ -554,7 +704,9 @@
     cursor: pointer;
   }
 
-  #state2-task-menu:hover, #state2-project-menu:hover, #state2-reminder-menu:hover{
+  #state2-task-menu:hover,
+  #state2-project-menu:hover,
+  #state2-reminder-menu:hover {
     width: 18vw;
     height: 10vh;
     transition: 0.5s ease;
@@ -562,13 +714,34 @@
 
   /* task menu */
 
+  .search{
+    height: 3vh;
+    width: 50vw;
+    background-color: rgb(255, 255, 255);
+    margin-top: 130px;
+    margin-left: 30vw;
+    margin-bottom: 3vh;
+    border: 3px solid #e9927c;
+    border-radius: 10px;
+    padding: 5px;
+  }
+
+  .search-btn{
+    height: 4.3vh;
+    width: 4.3vw;
+    margin-bottom: 2vh;
+    border: 2px solid gray;
+    background-color: rgb(255, 255, 255);
+   border-radius: 1000px;
+   cursor: pointer;
+  }
+
   #main-menu-task,
   #main-menu-project,
   #main-menu-reminder {
-    width: 63.5vw;
-    height: 100px;
-    margin-left: 25vw;
-    margin-top: 16vh;
+    width: 100%;
+    height: 100%;
+    
   }
 
   .task-form-container,
@@ -578,21 +751,21 @@
     height: auto;
     background-color: rgb(163, 205, 243);
     border-radius: 10px;
-    margin-left: 5vw;
+    margin-left: 30vw;
     padding: 15px;
   }
 
-  .task-form-container{
+  .task-form-container {
     border: 4px solid rgb(83, 120, 252);
     background-color: #6a90ff;
   }
 
-  .project-form-container{
+  .project-form-container {
     border: 4px solid #008346;
     background-color: #44b680;
   }
 
-  .reminder-form-container{
+  .reminder-form-container {
     border: 4px solid #df2d00;
     background-color: #e9927c;
   }
@@ -639,15 +812,16 @@
     margin-bottom: 10px;
   }
 
-  .task-submit, .project-submit,
+  .task-submit,
+  .project-submit,
   .reminder-submit {
     border: none;
     border-radius: 5px;
-    width: 70%;
+    width: 60%;
     height: 3vh;
     background-color: #d6ddf2;
     margin-top: 10px;
-    margin-left: 12vw;
+    margin-left: 30vw;
     margin-bottom: 50px;
   }
 
@@ -655,10 +829,16 @@
     text-decoration: line-through;
   }
 
-  .tasks, .projects, .reminders{
-    width: 100%;
+  .tasks,
+  .projects,
+  .reminders {
+    
+    width: 100vw;
+    
   }
-  .task-list, .project-list, .reminder-list{
+  .task-list,
+  .project-list,
+  .reminder-list {
     width: 66vw;
     height: auto;
     display: flex;
@@ -667,20 +847,25 @@
     margin-left: 2vw;
   }
 
-  .task, .project, .reminder{
+  .task,
+  .project,
+  .reminder {
     display: flex;
     flex-direction: column;
+    width: 60vw;
     height: auto;
+    margin-left: 28vw;
     margin-bottom: 30px;
     background-color: rgb(186, 186, 255);
     border-radius: 6px;
     border: 4px solid rgb(174, 107, 255);
-    padding: 10px
+    padding: 10px;
   }
 
-  .task-text, .project-text, .reminder-text{
-    
-    width: 63vw;
+  .task-text,
+  .project-text,
+  .reminder-text {
+    width: 56.5vw;
     height: auto;
     padding: 5px;
     border-radius: 6px;
@@ -688,26 +873,30 @@
     margin-bottom: 10px;
   }
 
-  .task-deadline, .project-deadline, .reminder-deadline{
+  .task-deadline,
+  .project-deadline,
+  .reminder-deadline {
     margin-bottom: 20px;
   }
 
-  .task-control-buttons button, .project-control-buttons button, .reminder-control-buttons button{
+  .task-control-buttons button,
+  .project-control-buttons button,
+  .reminder-control-buttons button {
     border: none;
     border-radius: 10px;
     padding: 5px;
   }
 
-  .task-control-buttons button:hover, .project-control-buttons button:hover, .reminder-control-buttons button:hover{
+  .task-control-buttons button:hover,
+  .project-control-buttons button:hover,
+  .reminder-control-buttons button:hover {
     padding: 7px;
     transition: 0.3s ease;
   }
 
-  .complete-button{
-   left: 0;
-   margin-right: 55vw;
-   margin-bottom: 1vh;
+  .complete-button {
+    left: 0;
+    margin-right: 55vw;
+    margin-bottom: 1vh;
   }
-
-  
 }
